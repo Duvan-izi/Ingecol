@@ -1,0 +1,31 @@
+[06-Feb-2022 21:27:13 America/Bogota] PHP Warning:  include_once(controllers/producto.controller.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Ingecol\frontend\index.php on line 13
+[06-Feb-2022 21:27:13 America/Bogota] PHP Warning:  include_once(): Failed opening 'controllers/producto.controller.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ingecol\frontend\index.php on line 13
+[06-Feb-2022 21:27:13 America/Bogota] PHP Warning:  include_once(models/producto.modelo.php): Failed to open stream: No such file or directory in C:\xampp\htdocs\Ingecol\frontend\index.php on line 16
+[06-Feb-2022 21:27:13 America/Bogota] PHP Warning:  include_once(): Failed opening 'models/producto.modelo.php' for inclusion (include_path='C:\xampp\php\PEAR') in C:\xampp\htdocs\Ingecol\frontend\index.php on line 16
+[06-Feb-2022 21:27:13 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ingecol.plantilla' doesn't exist in C:\xampp\htdocs\Ingecol\frontend\models\plantilla.modelo.php:12
+Stack trace:
+#0 C:\xampp\htdocs\Ingecol\frontend\models\plantilla.modelo.php(12): PDOStatement->execute()
+#1 C:\xampp\htdocs\Ingecol\frontend\controllers\plantilla.Controller.php(25): modeloPlantilla::mdlEstiloPlantilla('plantilla')
+#2 C:\xampp\htdocs\Ingecol\frontend\views\plantilla.php(17): ControllerPlantilla::ctrEstiloPlantilla()
+#3 C:\xampp\htdocs\Ingecol\frontend\controllers\plantilla.Controller.php(14): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Ingecol\frontend\index.php(22): ControllerPlantilla->plantilla()
+#5 {main}
+  thrown in C:\xampp\htdocs\Ingecol\frontend\models\plantilla.modelo.php on line 12
+[06-Feb-2022 21:27:58 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ingecol.plantilla' doesn't exist in C:\xampp\htdocs\Ingecol\frontend\models\plantilla.modelo.php:12
+Stack trace:
+#0 C:\xampp\htdocs\Ingecol\frontend\models\plantilla.modelo.php(12): PDOStatement->execute()
+#1 C:\xampp\htdocs\Ingecol\frontend\controllers\plantilla.Controller.php(25): modeloPlantilla::mdlEstiloPlantilla('plantilla')
+#2 C:\xampp\htdocs\Ingecol\frontend\views\plantilla.php(17): ControllerPlantilla::ctrEstiloPlantilla()
+#3 C:\xampp\htdocs\Ingecol\frontend\controllers\plantilla.Controller.php(14): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Ingecol\frontend\index.php(20): ControllerPlantilla->plantilla()
+#5 {main}
+  thrown in C:\xampp\htdocs\Ingecol\frontend\models\plantilla.modelo.php on line 12
+[06-Feb-2022 21:28:50 America/Bogota] PHP Fatal error:  Uncaught PDOException: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'ingecol.plantilla' doesn't exist in C:\xampp\htdocs\Ingecol\frontend\models\plantilla.modelo.php:12
+Stack trace:
+#0 C:\xampp\htdocs\Ingecol\frontend\models\plantilla.modelo.php(12): PDOStatement->execute()
+#1 C:\xampp\htdocs\Ingecol\frontend\controllers\plantilla.Controller.php(25): modeloPlantilla::mdlEstiloPlantilla('plantilla')
+#2 C:\xampp\htdocs\Ingecol\frontend\views\plantilla.php(17): ControllerPlantilla::ctrEstiloPlantilla()
+#3 C:\xampp\htdocs\Ingecol\frontend\controllers\plantilla.Controller.php(14): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\Ingecol\frontend\index.php(20): ControllerPlantilla->plantilla()
+#5 {main}
+  thrown in C:\xampp\htdocs\Ingecol\frontend\models\plantilla.modelo.php on line 12
