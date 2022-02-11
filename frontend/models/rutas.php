@@ -8,7 +8,7 @@
     
         static public function ctrRuta(){
     
-            return "http://localhost/ingecol/frontend/";
+            return "http://localhost/Ingecol/frontend/";
         
         }
     }

@@ -4,10 +4,10 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-	<meta name="title" content="Artesanias-Girardot">
-	<meta name="description" content="Tienda virtual para la organizacion de artesanos de la ciudad de Girardot. ">
-	<meta name="keyword" content="artesanias,Tienda,e-commerce,productos,Girardot">
-	<title>Artesanias-Girardot</title>
+	<meta name="title" content="Ingecol-Plus">
+	<meta name="description" content="Empresa prestadora de servicios de internet para regiones rurales y urbanas, tambien contamos con planes para empresas.">
+	<meta name="keyword" content="Internet, Telecomunicación, Servicios, Girardot, Tocaima">
+	<title>Ingecol-Plus</title>
 
 	<!--=====================================
 	Icono
@@ -15,7 +15,7 @@
 
 	<?php
 	$icono = ControllerPlantilla::ctrEstiloPlantilla();
-	echo '<link rel="icon" href="http://localhost/Art_Gir/backend/' . $icono["icono"] . '" >';
+	echo '<link rel="icon" href="http://localhost/Ingecol/backend/' . $icono["icono"] . '" >';
 
 	/*=============================================
 	Ruta fija del proyecto(estatica)
@@ -29,102 +29,67 @@
 	<!--=====================================
 	Plugins de css
 	======================================-->
-
-	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/plugins/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/plugins/font-awesome.min.css">
-	<!-- 	<link rel="stylesheet" href="<?php echo $url; ?>views/css/plugins/ionicons.min.css">-->
-	<!--=====================================
-	Google Fonts  
-	======================================-->
-	<link rel="preconnect" href="https://fonts.googleapis.com" />
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<!--Bootstrap-->
+	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/bootstrap.css">
 
 	<!--=====================================
 	Estilos personalizadas  
 	======================================-->
-	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/plantilla.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/cabezote.css">
-	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/slide.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/style.css">
+	<!--Responsive-->
+	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/responsive.css">
+	<!--Animation-->
+	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/animate.css">
+	<!--Prettyphoto-->
+	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/prettyPhoto.css">
+	<!--Font-Awesome-->
+	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/font-awesome.css">
+	<!--Owl-Slider-->
+	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/owl.carousel.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/owl.theme.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo $url; ?>views/css/owl.transitions.css">
+
+
+
+
+</head>
+
+<body data-spy="scroll" data-target=".navbar-default" data-offset="100">
+
+	<?php
+
+	/*======================================
+	Pagina principal
+	======================================*/
+	include "modulos/home.php";
+	/* include "modulos/contactanos.php"; */
+	?>
+	
 
 	<!--=====================================
 	Plugins Javascript
 	======================================-->
 
-	<script type="text/javascript" src="<?php echo $url; ?>views/js/plugins/jquery.min.js"></script>
-	<script type="text/javascript" src="<?php echo $url; ?>views/js/plugins/bootstrap.min.js"></script>
-
-</head>
-
-<body>
-
-	<?php
-
-	/*=============================================
-Cabezote
-=============================================*/
-
-	include "modulos/cabezote.php";
-
-	/*=============================================
-Contenido Dinamico
-=============================================*/
-
-	$rutas = array();
-	$ruta = null;
-
-	if (isset($_GET["ruta"])) {
-
-		$rutas = explode("/", $_GET["ruta"]);
-
-		$item = "ruta";
-		$valor = $rutas[0];
-
-		/* var_dump($rutas); */
-
-		/*=============================================
-		URL'S AMIGABLES DE CATEGORÍAS
-		=============================================*/
-
-		$ruta_categorias = controladorProductos::ctrListarCategorias($item, $valor);
-
-		if (is_array($ruta_categorias)) {
-			if ($rutas[0] == $ruta_categorias["ruta"]) {
-				$ruta = $rutas[0];
-			}
-		}
-
-		/*=============================================
-		URL'S AMIGABLES DE SUBCATEGORIAS
-		=============================================*/
-		$ruta_subcategoria = controladorProductos::ctrListarSubcategorias($item, $valor);
-
-		foreach ($ruta_subcategoria as $key => $value) {
-
-			if ($rutas[0] == $value["ruta"]) {
-				$ruta = $rutas[0];
-			}
-		}
-
-
-		/*=============================================
-		Lista Blanca de URL amigables
-		=============================================*/
-
-		if ($ruta != null) {
-			include "modulos/productos.php";
-		} else {
-			include "modulos/error404.php";
-		}
-	} else {
-		include "modulos/slide.php";
-	}
-	?>
-
-	<script src="<?php echo $url; ?>views/js/cabezote.js"></script>
-	<script src="<?php echo $url; ?>views/js/plantilla.js"></script>
-	<script src="<?php echo $url; ?>views/js/slide.js"></script>
-	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
-	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<!--Jquery-->
+	<script type="text/javascript" src="<?php echo $url; ?>views/js/jquery.min.js"></script>
+	<!--Boostrap-Jquery-->
+	<script type="text/javascript" src="<?php echo $url; ?>views/js/bootstrap.js"></script>
+	<!--Preetyphoto-Jquery-->
+	<script type="text/javascript" src="<?php echo $url; ?>views/js/jquery.prettyPhoto.js"></script>
+	<!--NiceScroll-Jquery-->
+	<script type="text/javascript" src="<?php echo $url; ?>views/js/jquery.nicescroll.js"></script>
+	<script type="text/javascript" src="<?php echo $url; ?>views/js/waypoints.min.js"></script>
+	<!--Isotopes-->
+	<script type="text/javascript" src="<?php echo $url; ?>views/js/jquery.isotope.js"></script>
+	<!--Wow-Jquery-->
+	<script type="text/javascript" src="<?php echo $url; ?>views/js/wow.js"></script>
+	<!--Count-Jquey-->
+	<script type="text/javascript" src="<?php echo $url; ?>views/js/jquery.countTo.js"></script>
+	<script type="text/javascript" src="<?php echo $url; ?>views/js/jquery.inview.min.js"></script>
+	<!--Owl-Crousels-Jqury-->
+	<script type="text/javascript" src="<?php echo $url; ?>views/js/owl.carousel.js"></script>
+	<!--Main-Scripts-->
+	<script type="text/javascript" src="<?php echo $url; ?>views/js/script.js"></script>
 
 </body>
 
